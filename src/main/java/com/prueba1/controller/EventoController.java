@@ -33,7 +33,7 @@ public class EventoController {
         List<Evento> listaEvento = eventoService.getAllEvento();
         model.addAttribute("titulo", "Tabla Eventos");
         model.addAttribute("eventos", listaEvento);
-        return "eventos";
+        return "evento";
     }
     
     //Metodo que actualiza los datos del DB y tabla existente
