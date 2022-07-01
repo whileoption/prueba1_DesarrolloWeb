@@ -1,0 +1,74 @@
+/* 
+    Created on : 30 jun. 2022, 18:17:42
+    Author     : Karina Madrigal
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Montserrat:wght@100;500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container{
+    height: 100vh;
+    width: 100%;
+    background-image: url(../images/background.png);
+    background-position: center;
+    background-size: cover;
+    padding-left: 5%;
+    padding-right: 5%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.navbar{
+    height: 15vh;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+
+.logo{
+    width: 160px;
+    cursor: pointer;
+}
+
+nav{
+    flex: 1;
+    padding-left: 60px;
+}
+
+
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 0px 20px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: indigo;
+}
+
+.content h1{
+    font-size: 60px;
+    font-weight: bold;
+    margin-top: 24px;
+    margin-bottom: 15px;
+    color: blueviolet;
+}
+
+.content p{
+    font-size: 20px;
+    color: indigo;
+}
+
+.feature-image{
+    height: 10%;
+    position: absolute;
+    bottom: 50px;
+    right: 160px;
+}
+

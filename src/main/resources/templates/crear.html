@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Crear</title>
+        <!-- Bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    </head>
+    <body>
+        
+        <form class="row g-3 needs-validation" novalidate 
+              th:object="${evento}"
+              th:action="@{/save}"
+              method="POST">
+            <input type="hidden" th:field="*{id}"> <!-- Esto es porque el id es autoincremental -->
+
+            <!-- Textfield y label para el costo -->
+            <div class="col-md-4">
+                <label for="costo" class="form-control-sm col-form-label col-md-2">Costo</label>
+                <input type="text" th:field="*{costo}" class="form-control form-control-sm col-md-6" id="costo" value="" required>
+                <div class="valid-feedback">
+                </div>
+            </div>
+
+            <!-- Textfield y label para la fecha -->
+            <div class="col-md-4">
+                <label for="fecha" class="form-control-sm col-form-label col-md-2">Fecha</label>
+                <input type="text" th:field="*{fecha}" class="form-control" id="fecha" value="" required>
+                <div class="valid-feedback">
+                </div>
+            </div>
+
+            <!-- Textfield y label para la capacidad -->
+            <div class="col-md-4">
+                <label for="capacidad" class="form-control-sm col-form-label col-md-2">Capacidad</label>
+                <input type="text" th:field="*{capacidad}" class="form-control" id="capacidad" value="" required>
+                <div class="valid-feedback">
+                </div>
+            </div>
+
+            <!-- Textfield y label para el lugar -->
+            <div class="col-md-6">
+                <label for="lugar" class="form-label">Lugar</label>
+                <input type="text" th:field="*{lugar}" class="form-control" id="lugar" required>
+                <div class="invalid-feedback">
+                </div>
+            </div>
+
+            <!-- Dropdown menu y label para el artista -->
+            <div class="col-md-3">
+                <label for="artista" class="form-label">Artista</label>
+                <select class="form-select" th:field="*{artista}" id="artista" required>
+                    <option th:each="x:${artistas}"
+                            th:value="${x.id}"
+                            th:text="${x.artista}"
+                            >Choose...</option>
+                </select>
+                <div class="invalid-feedback">
+                    Please select a valid state.
+                </div>
+            </div>
+
+            <!-- Boton para actualizar campos en DB -->
+            <div class="col-12">
+                <button class="btn btn-primary" type="submit" value="Guardar">Submit</button>
+            </div>
+        </form>
+        
+    </body>
+</html>
