@@ -39,9 +39,9 @@ public class EventoController {
     //Metodo que actualiza los datos del DB y tabla existente
     @GetMapping("/eventoN")
     public String crearEvento(Model model) {
-        List<Artista> listaArtista = artistaService.listArtista();
+        List<Artista> listaArtistas = artistaService.listArtista();
         model.addAttribute("evento", new Evento());
-        model.addAttribute("artistas", listaArtista);
+        model.addAttribute("artistas", listaArtistas);
         return "crear";
     }
     
